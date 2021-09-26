@@ -3,7 +3,8 @@ import pandas as pd
 import matplotlib.pylab as plt
 
 # Read in data files
-BASE_DIR = 'data'           #kaggle: '../input/nfl-health-and-safety-helmet-assignment'
+BASE_DIR = 'data/nfl-health-and-safety-helmet-assignment'
+#on kaggle: '../input/nfl-health-and-safety-helmet-assignment'
 
 # Labels and sample submission
 labels = pd.read_csv(f'{BASE_DIR}/train_labels.csv')
