@@ -194,7 +194,7 @@ with tqdm(total=len(df_list)) as pbar:
     for this_df in map(mapping_df, df_list):
         submission_df_list.append(this_df)
         pbar.update(1)
-p.close()
+#p.close()
 
 submission_df = pd.concat(submission_df_list)
 submission_df.to_csv('submission-baseline.csv', index=False)
