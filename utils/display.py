@@ -310,3 +310,25 @@ def plot_football_field_action(tracks, game_play, event=None):
     ax.set_title(f"Tracking data for {game_play}: at snap", fontsize=15)
     plt.show()
     return example_tracks
+
+def display_frame(video_path, frame, event=None):
+    """
+    Plot the image of the specified video at the specified frame
+    """
+    # select the video
+    cap = cv2.VideoCapture(video_path)
+    # set the correct frame
+    cap.set(cv2.CAP_PROP_POS_FRAMES, frame)
+    # read the data
+    _, ez_snap_img = cap.read()
+    
+    # plot the frame
+    plt.figure(figsize=(15, 15))
+    plt.imshow(cv2.cvtColor(ez_snap_img, cv2.COLOR_BGR2RGB))
+    plt.axis("off")
+    title = f"{video_path.split('/')[-1]}"
+    if event:
+        title += f" ({event})"
+    plt.title(title, fontsize=20)
+
+    return
