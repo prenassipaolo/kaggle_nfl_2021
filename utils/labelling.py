@@ -34,9 +34,9 @@ def random_submission(helmets, tracks):
         data["label"] = choices[: len(data)]
         ds.append(data)
     # concatenate dataframes and print the time
-    print('Concatenating...')
+    print('Concatenating...\t')
     tt = time.time()
     submission = pd.concat(ds)
-    print(f'Time: {time.time()-tt}')
+    print(f'Time: {int(time.time()-tt)} seconds')
     
     return submission

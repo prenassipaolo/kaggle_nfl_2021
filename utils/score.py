@@ -230,6 +230,11 @@ class NFLAssignmentScorer:
         If `check_constraints` is set to True, will return -999 if the
             submission fails one of the submission constraints.
         """
+
+        print("Score evaluation...\t")
+        # keep track of the time needed to evaluate
+        tt = time.time()
+
         if labels_df is None:
             labels_df = self.labels_df.copy()
 
@@ -257,6 +262,10 @@ class NFLAssignmentScorer:
             ]
             sub_labels = sub_labels.drop(drop_cols, axis=1)
         self.sub_labels = sub_labels
+
+        # print the time
+        print(f'Time: {int(time.time()-tt)} seconds')
+
         return score
 
 
