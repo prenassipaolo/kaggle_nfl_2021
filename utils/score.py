@@ -1,6 +1,7 @@
 from sklearn.metrics import accuracy_score
 import pandas as pd
 import numpy as np
+import time
 
 
 class NFLAssignmentScorer:
@@ -231,7 +232,7 @@ class NFLAssignmentScorer:
             submission fails one of the submission constraints.
         """
 
-        print("Score evaluation...\t")
+        print("Score evaluation...", end = "\t")
         # keep track of the time needed to evaluate
         tt = time.time()
 
