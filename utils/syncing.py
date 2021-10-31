@@ -34,3 +34,13 @@ def add_track_features(tracks, fps=59.94, snap_frame=10):
         ((tracks["snap_offset"] * fps) + snap_frame).round().astype("int")
     )
     return tracks
+
+
+def add_cols(df):
+    """
+    Split the informations of the 'video_frame' colums
+    """
+    df['game_play'] = df['video_frame'].str.split('_').str[:2].str.join('_')
+    if 'video' not in df.columns:
+        df['video'] = df['video_frame'].str.split('_').str[:3].str.join('_') + '.mp4'
+    return df
